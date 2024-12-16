@@ -1,0 +1,14 @@
+<div>
+  <h2 mat-dialog-title>
+    {{ "admin.deleteConfirmation" | translate }}
+  </h2>
+  <div>{{ data }}</div>
+  <mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close(false)">
+      {{ "admin.cancel" | translate }}
+    </button>
+    <button mat-raised-button color="warn" (click)="dialogRef.close(true)">
+      {{ "admin.delete" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

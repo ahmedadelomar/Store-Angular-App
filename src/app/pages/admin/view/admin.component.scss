@@ -1,0 +1,26 @@
+.add-button,
+.actions {
+  display: flex;
+}
+
+.add-button {
+  flex-direction: row-reverse;
+  margin: 1rem 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  mat-paginator {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <categories-component
+    *ngIf="categories && categories.length"
+    [categories]="categories"
+    [selectedCategory]="selectedCategory"
+    (categorySelected)="onCategorySelected($event)"
+  >
+  </categories-component>
+
+  <div class="products-wrapper">
+    <div *ngFor="let product of products" class="product-card">
+      <div class="image-wraper">
+        <img
+          [src]="product.image"
+          alt="{{ product.title }}"
+          class="product-image"
+        />
+      </div>
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description | slice : 0 : 100 }}...</p>
+      <span class="price">{{ product.price | currency }}</span>
+      <app-rating
+        [rating]="product.rating.rate"
+        [count]="product.rating.count"
+      ></app-rating>
+    </div>
+  </div>
+</div>

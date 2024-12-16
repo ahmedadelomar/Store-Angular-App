@@ -1,0 +1,22 @@
+<section class="wrapper">
+  <form class="form" [formGroup]="loginForm">
+    <h3>{{ "loginPage.login" | translate }}</h3>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>{{ "loginPage.userName" | translate }}</mat-label>
+      <input matInput formControlName="userName" />
+      <mat-error *ngIf="loginForm.get('userName')?.hasError('required')">
+        {{ "loginPage.userNameRequired" | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>{{ "loginPage.password" | translate }}</mat-label>
+      <input type="password" matInput formControlName="password" />
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        {{ "loginPage.passwordRequired" | translate }}
+      </mat-error>
+    </mat-form-field>
+    <button mat-flat-button (click)="onSubmit()">
+      {{ "loginPage.login" | translate }}
+    </button>
+  </form>
+</section>

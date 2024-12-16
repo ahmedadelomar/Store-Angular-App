@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <img src="./assets/imges/stc-logo.jpg" alt="logo" />
+  <div>
+    <button
+      *ngIf="!authService.isAuthenticated()"
+      mat-mini-fab
+      (click)="switchLanguage()"
+    >
+      <mat-icon>language</mat-icon>
+    </button>
+  </div>
+  <button
+    *ngIf="authService.isAuthenticated()"
+    mat-mini-fab
+    [matMenuTriggerFor]="menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="switchLanguage()">
+      {{ "navBar.lang" | translate }}
+      <mat-icon>language</mat-icon>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      {{ "navBar.logout" | translate }}
+    </button>
+  </mat-menu>
+</div>

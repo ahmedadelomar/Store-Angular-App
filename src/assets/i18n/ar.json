@@ -1,0 +1,38 @@
+{
+  "navBar": {
+    "lang": "English",
+    "logout": "تسجيل الخروج"
+  },
+  "loginPage": {
+    "login": "تسجيل الدخول",
+    "userName": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "userNameRequired": "من فضلك ادخل اسم المستخدم",
+    "passwordRequired": "من فضلك ادخل كلمة المرور",
+    "invalidData": "البيانات التي ادخلتها غير صحيحة"
+  },
+  "errorMessages": {
+    "notAuthorized": "انت غير مصرح لك فتح هذة الصفحة"
+  },
+  "admin": {
+    "title": "نموذج المنتج",
+    "id": "رقم المنتج",
+    "name": "اسم المنتج",
+    "price": "السعر",
+    "category": "الفئة",
+    "description": "التفاصيل",
+    "actions": "الإجراءات",
+    "addProduct": "إضافة منتج",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "productAdded": "تم إضافة المنتج بنجاح",
+    "productUpdated": "تم تحديث المنتج بنجاح",
+    "deleteConfirmation": "هل أنت متأكد أنك تريد حذف هذا المنتج؟",
+    "productDeleted": "تم حذف المنتج بنجاح",
+    "nameRequired": "من فضلك ادخل اسم المنتج",
+    "priceRequired": "من فضلك ادخل سعر المنتج",
+    "categoryRequired": "من فضلك ادخل فئة المنتج"
+  }
+}

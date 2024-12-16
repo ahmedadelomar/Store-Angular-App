@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <div class="add-button">
+    <button mat-flat-button (click)="onAddProduct()">
+      {{ "admin.addProduct" | translate }}
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ "admin.id" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ "admin.name" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let product">{{ product.title }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ "admin.price" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let product">{{ product.price }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ "admin.category" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let product">{{ product.category }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ "admin.description" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let product">{{ product.description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ "admin.actions" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let product">
+          <div class="actions">
+            <button mat-button (click)="onEditProduct(product)">
+              {{ "admin.edit" | translate }}
+            </button>
+            <button mat-button color="warn" (click)="onDeleteProduct(product)">
+              {{ "admin.delete" | translate }}
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      [length]="products.length"
+      [pageSize]="5"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</div>

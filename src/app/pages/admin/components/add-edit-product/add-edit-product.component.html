@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>
+  {{
+    data.isEdit
+      ? ("admin.editProduct" | translate)
+      : ("admin.addProduct" | translate)
+  }}
+</h2>
+
+<form [formGroup]="productForm">
+  <mat-form-field>
+    <mat-label>{{ "admin.name" | translate }}</mat-label>
+    <input matInput formControlName="title" />
+    <mat-error *ngIf="productForm.get('title')?.hasError('required')">
+      {{ "admin.nameRequired" | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{ "admin.price" | translate }}</mat-label>
+    <input matInput formControlName="price" type="number" />
+    <mat-error *ngIf="productForm.get('price')?.hasError('required')">
+      {{ "admin.priceRequired" | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{ "admin.category" | translate }}</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="productForm.get('category')?.hasError('required')">
+      {{ "admin.categoryRequired" | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">
+      {{ "admin.cancel" | translate }}
+    </button>
+    <button mat-flat-button (click)="onSubmit()">
+      {{ "admin.save" | translate }}
+    </button>
+  </div>
+</form>

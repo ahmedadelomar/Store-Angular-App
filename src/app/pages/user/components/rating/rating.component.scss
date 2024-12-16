@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #005cbb;
+
+  .filled {
+    color: #005cbb;
+  }
+
+  span {
+    margin: 0 2px;
+  }
+}
